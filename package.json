@@ -1,0 +1,52 @@
+{
+  "name": "mp-ci",
+  "version": "0.0.0",
+  "description": "微信小程序、小游戏CI工具。",
+  "main": "lib/index.js",
+  "bin": {
+    "mp-ci": "./bin/mp-ci.js"
+  },
+  "scripts": {
+    "start": "tsc --watch",
+    "build": "tsc",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "magic-lint --staged --eslint --stylelint --prettier --fix",
+      "commit-msg": "magic-lint --commit"
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ineo6/mp-ci.git"
+  },
+  "authors": [
+    "neo <arklove@qq.com> (https://github.com/ineo6)"
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ineo6/mp-ci/issues"
+  },
+  "homepage": "https://github.com/ineo6/mp-ci#readme",
+  "keywords": [
+    "jenkins",
+    "wechat",
+    "miniprogram",
+    "minigame",
+    "ci",
+    "deploy"
+  ],
+  "dependencies": {
+    "chalk": "^4.0.0",
+    "cli-table3": "^0.6.0",
+    "commander": "^5.1.0",
+    "miniprogram-ci": "^1.0.30",
+    "ora": "^4.0.4",
+    "simple-git": "^2.5.0"
+  },
+  "devDependencies": {
+    "eslint-config-magic": "^1.2.0",
+    "magic-lint": "^1.2.0"
+  }
+}
