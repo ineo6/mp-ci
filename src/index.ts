@@ -90,7 +90,7 @@ function fsExistsSync(path: string) {
   return true;
 }
 
-class CI {
+class Ci {
   private version: string;
 
   public workspace: string = '';
@@ -313,4 +313,4 @@ class CI {
   }
 }
 
-module.exports = CI;
+module.exports = Ci;
