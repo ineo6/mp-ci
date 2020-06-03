@@ -47,6 +47,7 @@
   },
   "devDependencies": {
     "eslint-config-magic": "^1.2.0",
-    "magic-lint": "^1.2.0"
+    "magic-lint": "^1.2.0",
+    "typescript": "^3.9.3"
   }
 }
