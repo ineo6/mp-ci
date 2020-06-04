@@ -293,7 +293,7 @@ class Ci {
           qrcodeOutputDest: this.relsoveQrPath(opts.qr, opts.qrDest),
           onProgressUpdate: function() {},
           pagePath: opts.pagePath,
-          searchQuery: opts.searchQuery, // 预览参数 [注意!]这里的`&`字符在命令行中应写成转义字符`\&`
+          searchQuery: opts.searchQuery, // 这里的`&`字符在命令行中应写成转义字符`\&`
           // @ts-ignore
           proxy: opts.proxy || '',
           robot: this.robot,

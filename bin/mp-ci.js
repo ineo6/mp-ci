@@ -7,17 +7,17 @@ program.version(packageJson.version).usage('[--options ...]');
 
 program
   .command('upload [workspace]')
-  .option('-e, --env [value]', '环境', 'dev')
-  .option('-t, --type [value]', '项目类型', 'miniProgram')
+  .option('--env [value]', '环境', 'dev')
+  .option('--type [value]', '项目类型', 'miniProgram')
   .option('--ver [value]', '发布版本号', '0.0.0')
-  .option('-d, --desc [value]', '发布简介')
-  .option('-p, --pkp [value]', '私钥')
+  .option('--desc [value]', '发布简介')
+  .option('--pkp [value]', '私钥文件所在路径')
   .option('--test', '输出二维码', true)
   .option('--no-test', '禁止输出二维码')
-  .option('-q, --qr [value]', '二维码文件的格式: terminal|base64|image', 'image')
+  .option('--qr [value]', '二维码文件的格式: terminal|base64|image', 'image')
+  .requiredOption('--qrDest [value]', '二维码文件保存路径 ', 'preview.png')
   .option('--proxy [value]', '代理url')
   .option('--robot [value]', '指定CI机器人，1 ~ 30', '1')
-  .requiredOption('-qd, --qrDest [value]', '二维码文件保存路径 ', 'preview.png')
   .description('上传代码')
   .action(function(workspace, cmdObj) {
     new Ci({
@@ -38,17 +38,17 @@ program
 
 program
   .command('preview [workspace]')
-  .option('-e, --env [value]', '环境', 'dev')
-  .option('-t, --type [value]', '项目类型', 'miniProgram')
-  .option('-ver, --ver [value]', '发布版本号', '0.0.0')
-  .option('-d, --desc [value]', '发布简介', '提交上传')
-  .option('-p, --pkp [value]', '私钥', '提交上传')
-  .option('-q, --qr [value]', '二维码文件的格式: terminal|base64|image', 'image')
+  .option('--env [value]', '环境', 'dev')
+  .option('--type [value]', '项目类型', 'miniProgram')
+  .option('--ver [value]', '发布版本号', '0.0.0')
+  .option('--desc [value]', '发布简介')
+  .option('--pkp [value]', '私钥文件所在路径')
+  .option('--qr [value]', '二维码文件的格式: terminal|base64|image', 'image')
+  .requiredOption('--qrDest [value]', '二维码文件保存路径 ', 'preview.png')
   .option('--pagePath [value]', '预览页面路径')
-  .option('--searchQuery [value]', '预览页面路径启动参数')
+  .option('--searchQuery [value]', '预览页面路径启动参数，这里的&字符在命令行中应写成转义字符\\&')
   .option('--proxy [value]', '代理url')
   .option('--robot [value]', '指定CI机器人，1 ~ 30', '1')
-  .requiredOption('-qd, --qrDest [value]', '二维码文件保存路径 ', 'preview.png')
   .description('预览代码')
   .action(function(workspace, cmdObj) {
     new Ci({
