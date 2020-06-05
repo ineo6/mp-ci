@@ -7,7 +7,7 @@ program.version(packageJson.version).usage('[--options ...]');
 
 program
   .command('upload [workspace]')
-  .option('--env [value]', '环境', 'dev')
+  .option('--env [value]', '环境类型, 例如 dev|test|prod')
   .option('--type [value]', '项目类型', 'miniProgram')
   .option('--ver [value]', '发布版本号')
   .option('--desc [value]', '发布简介')
@@ -38,7 +38,7 @@ program
 
 program
   .command('preview [workspace]')
-  .option('--env [value]', '环境', 'dev')
+  .option('--env [value]', '环境类型, 例如 dev|test|prod')
   .option('--type [value]', '项目类型', 'miniProgram')
   .option('--ver [value]', '发布版本号')
   .option('--desc [value]', '发布简介')
