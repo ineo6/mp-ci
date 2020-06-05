@@ -8,7 +8,7 @@
 [![Watch on GitHub][github-watch-badge]][github-watch]
 [![Star on GitHub][github-star-badge]][github-star]
 
-微信小程序(游戏)发布助手, 支持预览和上传。可以和`jenkins`结合使用，实现自动化发布。
+微信小程序(游戏)发布助手, 支持预览和上传。可以和`Jenkins`、`GitHub Actions`结合使用，实现自动化发布。
 
 基于官方`miniprogram-ci`封装。
 
@@ -145,6 +145,9 @@ Options:
 
 **这里的`&`字符在命令行中应写成转义字符`\&`**
 
+## 相关资源
+
+- [mp-ci-demo](https://github.com/ineo6/mp-ci-demo) ：`Taro`和`GitHub Actions`持续集成示例
 
 [version-badge]: https://img.shields.io/npm/v/mp-ci.svg?style=flat-square
 [package]: https://www.npmjs.com/package/mp-ci
