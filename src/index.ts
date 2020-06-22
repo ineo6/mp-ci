@@ -66,8 +66,6 @@ interface ProjectConfig {
 }
 
 interface UploadOptions {
-  qr?: QrType;
-  qrDest?: string;
   proxy?: string;
 }
 
@@ -254,8 +252,6 @@ class Ci {
           project: this.project,
           version: info.version,
           desc: info.desc,
-          qrcodeFormat: opts.qr,
-          qrcodeOutputDest: this.relsoveQrPath(opts.qr, opts.qrDest),
           setting: this.projectConfig ? this.projectConfig.setting : {},
           onProgressUpdate: function() {},
           // @ts-ignore

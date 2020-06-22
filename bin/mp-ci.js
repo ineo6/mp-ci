@@ -12,8 +12,6 @@ program
   .option('--ver [value]', '发布版本号')
   .option('--desc [value]', '发布简介')
   .option('--pkp [value]', '私钥文件所在路径')
-  .option('--qr [value]', '二维码文件的格式: terminal|base64|image', 'image')
-  .requiredOption('--qrDest [value]', '二维码文件保存路径 ', 'preview.png')
   .option('--proxy [value]', '代理url')
   .option('--robot [value]', '指定CI机器人，1 ~ 30', '1')
   .description('上传代码')
@@ -27,8 +25,6 @@ program
       pkp: cmdObj.pkp,
       robot: cmdObj.robot,
     }).upload({
-      qr: cmdObj.qr,
-      qrDest: cmdObj.qrDest,
       proxy: cmdObj.proxy,
     });
   });

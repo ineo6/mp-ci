@@ -74,10 +74,6 @@ Options:
   --ver [value]     发布版本号 (default: "0.0.0")
   --desc [value]    发布简介
   --pkp [value]     私钥文件所在路径
-  --test            输出二维码 (default: true)
-  --no-test         禁止输出二维码
-  --qr [value]      二维码文件的格式: terminal|base64|image (default: "image")
-  --qrDest [value]  二维码文件保存路径  (default: "preview.png")
   --proxy [value]   代理url
   --robot [value]   指定CI机器人，1 ~ 30 (default: "1")
   -h, --help        display help for command
@@ -104,10 +100,10 @@ Options:
   --robot [value]        指定CI机器人，1 ~ 30 (default: "1")
   -h, --help             display help for command
 ```
- 
+
 说明：
 
-#### `version` & `ver`
+#### `version` & `desc`
 
 * `version`版本号规则
   * 尝试读取目录下的 `package.json` 文件中`version`
@@ -119,14 +115,14 @@ Options:
   * 读取命令行中传入的备注参数: `--desc`
   * 获取项目(`git`)最新`commit`的`message`
   * 组合: `env: ${env} ${desc || message}`
-  * 例如: `env: dev 补充信息` 
- 
+  * 例如: `env: dev 补充信息`
+
 #### `pkp`
- 
+
 私钥文件位置。
- 
+
 小程序管理员身份访问"[微信公众平台](https://mp.weixin.qq.com/)-开发-开发设置"后下载密钥。
- 
+
 #### `qr`
 
 可选值包括 `terminal`, `base64`, `image`。
@@ -134,10 +130,6 @@ Options:
 #### `qrDest`
 
 当`qr`设置为`base64`、`image`时，需要设置`qrDest`指定输出位置（相对于项项目目录）。
-
-#### `test`
-
-`upload`命令特有的参数，在上传成功后，会和`preview`命令一样生成二维码。当前是需要`qr`、`qrDest`命令配合。
 
 #### `searchQuery`
 
