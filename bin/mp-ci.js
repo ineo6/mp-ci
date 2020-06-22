@@ -12,8 +12,6 @@ program
   .option('--ver [value]', '发布版本号')
   .option('--desc [value]', '发布简介')
   .option('--pkp [value]', '私钥文件所在路径')
-  .option('--test', '输出二维码', true)
-  .option('--no-test', '禁止输出二维码')
   .option('--qr [value]', '二维码文件的格式: terminal|base64|image', 'image')
   .requiredOption('--qrDest [value]', '二维码文件保存路径 ', 'preview.png')
   .option('--proxy [value]', '代理url')
@@ -31,7 +29,6 @@ program
     }).upload({
       qr: cmdObj.qr,
       qrDest: cmdObj.qrDest,
-      test: cmdObj.test,
       proxy: cmdObj.proxy,
     });
   });
