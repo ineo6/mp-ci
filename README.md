@@ -71,7 +71,7 @@ Usage: mp-ci upload [options] [workspace]
 Options:
   --env [value]     环境 (default: "dev")
   --type [value]    项目类型 (default: "miniProgram")
-  --ver [value]     发布版本号 (default: "0.0.0")
+  --ver [value]     发布版本号
   --desc [value]    发布简介
   --pkp [value]     私钥文件所在路径
   --proxy [value]   代理url
@@ -89,7 +89,7 @@ Usage: mp-ci preview [options] [workspace]
 Options:
   --env [value]          环境 (default: "dev")
   --type [value]         项目类型 (default: "miniProgram")
-  --ver [value]          发布版本号 (default: "0.0.0")
+  --ver [value]          发布版本号
   --desc [value]         发布简介
   --pkp [value]          私钥文件所在路径
   --qr [value]           二维码文件的格式: terminal|base64|image (default: "image")
