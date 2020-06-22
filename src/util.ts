@@ -1,23 +1,12 @@
 // @ts-ignore
 import simpleGit from 'simple-git';
 
-export function getLastCommitLog(gitProject: string): Promise<any> {
-  return new Promise((resolve, reject) => {
-    const git = simpleGit(gitProject);
+export async function getLastCommitLog(gitProject: string): Promise<any> {
+  const git = simpleGit(gitProject);
 
-    git.log(
-      {
-        n: 1,
-      },
-      (error: any, listLogSummary: any) => {
-        if (!error) {
-          resolve(listLogSummary.latest);
-        } else {
-          reject(error);
-        }
-      }
-    );
-  });
+  const listLogSummary = await git.log({ n: 1 });
+
+  return listLogSummary.latest;
 }
 
 export function getPackageName(name: string): string {
