@@ -196,7 +196,7 @@ class Ci {
   }
 
   public printResult(version: string, desc: string, result: IUploadResult) {
-    const { subPackageInfo = [], pluginInfo = [] } = result;
+    const { subPackageInfo = [], pluginInfo = [], devPluginId = '无' } = result;
 
     const table = new Table({
       head: ['时间', '版本号', '项目备注'],
@@ -221,12 +221,12 @@ class Ci {
       console.log('插件信息');
 
       const pluginTable = new Table({
-        head: ['appid', '版本', '大小'],
+        head: ['appid', '版本', '大小', 'devPluginId'],
       });
 
       pluginInfo.forEach(pluginInfo => {
         const formatSize = getFormatFileSize(pluginInfo.size);
-        pluginTable.push([pluginInfo.pluginProviderAppid, pluginInfo.version, formatSize.size + formatSize.measure]);
+        pluginTable.push([pluginInfo.pluginProviderAppid, pluginInfo.version, formatSize.size + formatSize.measure, devPluginId]);
       });
 
       console.log(pluginTable.toString());
