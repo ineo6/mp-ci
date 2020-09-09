@@ -173,14 +173,14 @@ class Ci {
     try {
       const latestCommit = await getLastCommitLog(this.workspace);
 
-      version = `${version}.${latestCommit.hash.substring(0, 7)}`;
+      const hash = `(${latestCommit.hash.substring(0, 7)})`;
 
       if (this.env) {
         version = `${version}.${this.env}`;
       }
 
       // 没有desc时使用提交信息
-      desc = `${envDesc} ${desc || latestCommit.message}`;
+      desc = `${envDesc} ${desc || latestCommit.message + hash}`;
     } catch (e) {
       if (this.env) {
         version = `${version}.${this.env}`;

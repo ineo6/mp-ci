@@ -107,15 +107,13 @@ Options:
 
 * `version`版本号规则
   * 尝试读取目录下的 `package.json` 文件中`version`
-  * 获取项目(`git`)最新`commit`的`hash`值
-  * 组合: `${version}.${hash}.${env}`
-  * 例如: `1.0.0.6a9ef0a.dev`
+  * 例如: `1.0.0`
 * `desc`备注规则
   * 读取命令行中传入的环境参数: `--env`
   * 读取命令行中传入的备注参数: `--desc`
   * 获取项目(`git`)最新`commit`的`message`
-  * 组合: `env: ${env} ${desc || message}`
-  * 例如: `env: dev 补充信息`
+  * 组合: `env: ${env} ${desc || message(hash)}`
+  * 例如: `env: dev 补充信息(e0c015a)`
 
 #### `pkp`
 
