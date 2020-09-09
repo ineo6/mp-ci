@@ -1,6 +1,6 @@
 {
   "name": "mp-ci",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "微信小程序、小游戏CI工具。",
   "main": "lib/index.js",
   "bin": {
