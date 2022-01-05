@@ -133,7 +133,7 @@ class Ci {
         this.projectConfig = {
           appid: config.appid,
           miniprogramRoot: config.miniprogramRoot,
-          setting: config.setting,
+          setting: config.setting ? {...config.setting, es7: !!config.setting.enhance} : {},
           compileType: config.compileType,
         };
 
